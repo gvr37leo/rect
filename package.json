@@ -1,16 +1,24 @@
 {
-  "name": "rectx",
+  "name": "rect2x",
   "version": "1.0.0",
-  "description": "",
-  "main": "package.js",
+  "description": "rect",
+  "main": "rect.js",
   "dependencies": {
-    "utilsx": "^1.9.0",
-    "vectorx": "^2.4.0"
+    "vectorx": "^2.4.0",
+    "utilsx": "^1.9.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvr37leo/rect.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvr37leo/rect/issues"
+  },
+  "homepage": "https://github.com/gvr37leo/rect#readme"
 }
