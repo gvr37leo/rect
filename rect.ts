@@ -29,9 +29,9 @@ class Rect{
     }
 
     getEdge(dim:number,takeMax:boolean){
-        var result = this.pos[dim];
+        var result = this.pos.vals[dim];
 		if(takeMax){
-			result += this.size[dim];
+			result += this.size.vals[dim];
 		}
 		return result;
     }
@@ -53,7 +53,7 @@ class Rect{
         ctxt.moveTo(tl.x,tl.y)
         ctxt.lineTo(tr.x,tr.y)
         ctxt.lineTo(br.x,br.y)
-        ctxt.lineTo(br.x,br.y)
+        ctxt.lineTo(bl.x,bl.y)
         ctxt.lineTo(tl.x,tl.y)
         ctxt.stroke()
     }
