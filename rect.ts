@@ -57,6 +57,16 @@ class Rect{
         ctxt.lineTo(tl.x,tl.y)
         ctxt.stroke()
     }
+
+    loop(callback:(v:Vector)=>void){
+        var temp = this.size.c()
+
+        this.size.loop(v2 => {
+            temp.overwrite(v2)
+            temp.add(this.size)
+            callback(temp)
+        })
+    }
 }
 
 function rangeOverlap(range1A:number,range1B:number,range2A:number,range2B:number){
