@@ -38,7 +38,7 @@ class Rect{
 
     getPoint(relativePos:Vector){
         var halfsize = this.size.c().scale(0.5);
-		var center = this.pos.add(halfsize);
+		var center = this.pos.c().add(halfsize);
         halfsize.mul(relativePos)
 		return center.add(halfsize);
     }
