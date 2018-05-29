@@ -63,7 +63,7 @@ class Rect{
 
         this.size.loop(v2 => {
             temp.overwrite(v2)
-            temp.add(this.size)
+            temp.add(this.pos)
             callback(temp)
         })
     }

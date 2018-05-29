@@ -1,6 +1,6 @@
 {
   "name": "rect2x",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "rect",
   "main": "rect.js",
   "dependencies": {
