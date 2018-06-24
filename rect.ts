@@ -28,6 +28,44 @@ class Rect{
 		return true;
     }
 
+    collideLine(a:Vector,b:Vector,out:[number,number]):boolean{
+        var clip1:[number,number] = [0,0]
+        var clip2:[number,number] = [0,0]
+
+        this.relIntersect(a.x,b.x, this.getEdge(0,false), this.getEdge(0,true), clip1)
+        this.relIntersect(a.y,b.y, this.getEdge(1,false), this.getEdge(1,true), clip2)
+        
+        //result contains if the lines intersected
+        var result = this.intersectLine(clip1[0],clip1[1],clip2[0],clip2[1],out)
+        return result && inRange(0,1,out[0])// && inRange(0,1,out[1])
+    }
+
+    relIntersect(amin:number,amax:number,bmin:number,bmax:number,out:[number,number]){
+        if(amin == amax){//this could use some work
+            out[0] = -Infinity
+            out[1] = Infinity
+            return
+        }
+        var length = Math.abs(to(amin, amax))
+        out[0] = Math.abs(to(amin,bmin)) / length;
+        out[1] = Math.abs(to(amin,bmax)) / length;
+        if(amin > amax){
+            swap(out)
+        }
+    }
+
+    intersectLine(amin:number,amax:number,bmin:number,bmax:number,out:[number,number]){
+        var ibegin = max(amin,bmin)
+        var iend = min(amax,bmax)
+        out[0] = ibegin
+        out[1] = iend
+        if(ibegin <= iend){
+            return true
+        }else{
+            return false
+        }
+    }
+
     getEdge(dim:number,takeMax:boolean){
         var result = this.pos.vals[dim];
 		if(takeMax){
