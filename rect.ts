@@ -1,5 +1,6 @@
-/// <reference path="node_modules/utilsx/utils.ts" />
 /// <reference path="node_modules/vectorx/vector.ts" />
+/// <reference path="node_modules/utilsx/utils.ts" />
+
 
 class Rect{
     pos:Vector
@@ -44,10 +45,10 @@ class Rect{
     }
 
     draw(ctxt:CanvasRenderingContext2D){
-        var tl = this.getPoint(new Vector2(-1,-1))
-        var tr = this.getPoint(new Vector2(1,-1))
-        var br = this.getPoint(new Vector2(1,1))
-        var bl = this.getPoint(new Vector2(-1,1))
+        var tl = this.getPoint(new Vector(-1,-1))
+        var tr = this.getPoint(new Vector(1,-1))
+        var br = this.getPoint(new Vector(1,1))
+        var bl = this.getPoint(new Vector(-1,1))
 
         ctxt.beginPath()
         ctxt.moveTo(tl.x,tl.y)
